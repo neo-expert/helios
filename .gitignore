@@ -1,5 +1,5 @@
 out/
-.gradle/
+target/
 build/
 docs/
 history/
