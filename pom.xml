@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.helios</groupId>
+	<artifactId>omegadrive</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<name>omegadrive</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.7.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>5.7.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>30.0-jre</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.helios</groupId>
+			<artifactId>68k</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/headford68k-1.08.jar</systemPath>
+
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jctools/jctools-core -->
+		<dependency>
+			<groupId>org.jctools</groupId>
+			<artifactId>jctools-core</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.helios</groupId>
+			<artifactId>z80</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/jsanchezvZ80-1.02.jar</systemPath>
+
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.digitalmediaserver/cuelib-core -->
+		<dependency>
+			<groupId>org.digitalmediaserver</groupId>
+			<artifactId>cuelib-core</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.java.jinput</groupId>
+			<artifactId>jinput</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cupvm</groupId>
+			<artifactId>intf</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cupvm</groupId>
+			<artifactId>classloader</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cupvm</groupId>
+			<artifactId>debugger</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<finalName>helios</finalName>
+					<archive>
+						<manifest>
+							<mainClass>Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<finalName>helios</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+					<archive>
+						<manifest>
+							<mainClass>Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+    </plugins>
+  </build>
+</project>

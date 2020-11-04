@@ -29,8 +29,7 @@ import omegadrive.sound.persist.FileSoundPersister;
 import omegadrive.sound.persist.SoundPersister;
 import omegadrive.sound.psg.PsgProvider;
 import omegadrive.system.Sms;
-import omegadrive.system.gb.GbSoundWrapper;
-import omegadrive.system.nes.NesSoundWrapper;
+//import omegadrive.system.gb.GbSoundWrapper;
 import omegadrive.util.PriorityThreadFactory;
 import omegadrive.util.RegionDetector;
 import omegadrive.util.SoundUtil;
@@ -110,12 +109,6 @@ public abstract class AbstractSoundManager implements SoundProvider {
                 if (Sms.ENABLE_FM) {
                     fmProvider = Ym2413Provider.createInstance(AbstractSoundManager.audioFormat);
                 }
-                break;
-            case NES:
-                fmProvider = new NesSoundWrapper(region, AbstractSoundManager.audioFormat);
-                break;
-            case GB:
-                fmProvider = new GbSoundWrapper(region, AbstractSoundManager.audioFormat);
                 break;
             default:
                 break;

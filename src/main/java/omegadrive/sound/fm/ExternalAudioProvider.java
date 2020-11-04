@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class ExternalAudioProvider implements FmProvider {
 
-    private static final Logger LOG = LogManager.getLogger(omegadrive.system.gb.GbSoundWrapper.class.getSimpleName());
+    //private static final Logger LOG = LogManager.getLogger(omegadrive.system.gb.GbSoundWrapper.class.getSimpleName());
     protected AtomicInteger queueLen = new AtomicInteger();
     private Queue<Integer> sampleQueue;
     private volatile boolean running = false;
@@ -62,7 +62,7 @@ public class ExternalAudioProvider implements FmProvider {
         if (res) {
             queueLen.getAndIncrement();
         } else {
-            LOG.info("Sample dropped");
+            //LOG.info("Sample dropped");
         }
     }
 
@@ -74,18 +74,18 @@ public class ExternalAudioProvider implements FmProvider {
         if (res) {
             queueLen.getAndIncrement();
         } else {
-            LOG.info("Sample dropped");
+            //LOG.info("Sample dropped");
         }
     }
 
     public void start() {
         running = true;
-        LOG.debug("Running: {}", running);
+        //LOG.debug("Running: {}", running);
     }
 
     public void stop() {
         running = false;
-        LOG.debug("Running: {}", running);
+        //LOG.debug("Running: {}", running);
     }
 
     @Override

@@ -22,8 +22,8 @@ package omegadrive.sound.fm;
 import com.google.common.collect.Maps;
 import omegadrive.sound.SoundProvider;
 import omegadrive.system.perf.Telemetry;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
  */
 public class AudioRateControl {
     public static final double FM_CALCS_PER_MICROS = (1_000_000.0 / SoundProvider.SAMPLE_RATE_HZ);
-    private static final Logger LOG = LogManager.getLogger(AudioRateControl.class.getSimpleName());
+    //private static final Logger LOG = LogManager.getLogger(AudioRateControl.class.getSimpleName());
     private static final boolean DEBUG = false;
     private static final double HALF_LIMIT = 0.025;
     private static final double LOWER_LIMIT = FM_CALCS_PER_MICROS * (1 - HALF_LIMIT);
@@ -52,7 +52,7 @@ public class AudioRateControl {
         this.bufferSize = bufferSize;
         this.targetBufferSize = (int) (bufferSize * 0.75d);
         statsHolder = new StatsHolder(sourceName);
-        LOG.info("Init with targetBufferSize: {}, bufferSize: {}", targetBufferSize, bufferSize);
+        //LOG.info("Init with targetBufferSize: {}, bufferSize: {}", targetBufferSize, bufferSize);
     }
 
     public static Optional<String> getLatestStats() {
@@ -79,7 +79,7 @@ public class AudioRateControl {
         fm = fm > UPPER_LIMIT ? UPPER_LIMIT : (fm < LOWER_LIMIT ? LOWER_LIMIT : fm);
         if (queueLen > statsHolder.maxLen) {
             if (DEBUG) {
-                LOG.info("{}hz, q_av {}, b_size {}, steady {}", sampleRate, queueLen, bufferSize, steadyState);
+                //LOG.info("{}hz, q_av {}, b_size {}, steady {}", sampleRate, queueLen, bufferSize, steadyState);
             }
             statsHolder.maxLen = queueLen;
         }

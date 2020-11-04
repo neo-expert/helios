@@ -25,8 +25,7 @@ import omegadrive.system.Genesis;
 import omegadrive.system.Sms;
 import omegadrive.system.SystemProvider;
 import omegadrive.system.Z80BaseSystem;
-import omegadrive.system.gb.Gb;
-import omegadrive.system.nes.Nes;
+//import omegadrive.system.gb.Gb;
 import omegadrive.ui.DisplayWindow;
 import omegadrive.ui.PrefStore;
 import omegadrive.ui.SwingWindow;
@@ -35,7 +34,7 @@ import omegadrive.util.Util;
 import omegadrive.util.ZipUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ru.krlvm.swingdpi.SwingDPI;
+//import ru.krlvm.swingdpi.SwingDPI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -160,6 +159,7 @@ public class SystemLoader {
             String lf = UIManager.getSystemLookAndFeelClassName();
             UIManager.setLookAndFeel(lf);
             if (lf.equals("com.sun.java.swing.plaf.windows.WindowsLookAndFeel")) {
+							/*
                 SwingDPI.excludeDefaults(
                         "RadioButtonMenuItem.font",
                         "CheckBoxMenuItem.font",
@@ -168,14 +168,15 @@ public class SystemLoader {
                         "MenuItem.font",
                         "Menu.font"
                 );
+								*/
             }
         } catch (Exception e) {
             LOG.error("Failed to set SwingUI native Look and Feel", e);
         }
         UIDefaults defaults = UIManager.getLookAndFeelDefaults();
-        defaults.put("TextArea.font", ((Font) defaults.get("TextArea.font")).deriveFont(13 * SwingDPI.getScaleFactor()));
-        SwingDPI.applyScalingAutomatically();
-        LOG.info("SwingUI DPI Scale factor: " + SwingDPI.getScaleFactor());
+        //defaults.put("TextArea.font", ((Font) defaults.get("TextArea.font")).deriveFont(13 * SwingDPI.getScaleFactor()));
+        //SwingDPI.applyScalingAutomatically();
+        //LOG.info("SwingUI DPI Scale factor: " + SwingDPI.getScaleFactor());
     }
 
     // Create the frame on the event dispatching thread
@@ -291,9 +292,9 @@ public class SystemLoader {
         } else if (isGg) {
             systemProvider = Sms.createNewInstance(SystemType.GG, emuFrame, debugPerf);
         } else if (isNes) {
-            systemProvider = Nes.createNewInstance(SystemType.NES, emuFrame);
+            //systemProvider = Nes.createNewInstance(SystemType.NES, emuFrame);
         } else if (isGb) {
-            systemProvider = Gb.createNewInstance(SystemType.GB, emuFrame);
+            //systemProvider = Gb.createNewInstance(SystemType.GB, emuFrame);
         }
         if (systemProvider == null) {
             LOG.error("Unable to find a system to load: " + file.toAbsolutePath());
