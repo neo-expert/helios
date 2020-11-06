@@ -30,14 +30,10 @@ import omegadrive.input.InputProvider;
 import omegadrive.input.MsxKeyboardInput;
 import omegadrive.memory.IMemoryProvider;
 import omegadrive.util.FileLoader;
-import omegadrive.util.LogHelper;
 import omegadrive.util.Size;
 import omegadrive.util.Util;
 import omegadrive.vdp.Tms9918aVdp;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -45,6 +41,8 @@ import java.util.Arrays;
 
 import static omegadrive.input.InputProvider.PlayerNumber.P1;
 import static omegadrive.input.InputProvider.PlayerNumber.P2;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * see
@@ -149,7 +147,7 @@ public class MsxBus extends DeviceAwareBus<Tms9918aVdp> implements Z80BusProvide
     public void writeIoPort(int port, int value) {
         port &= 0xFF;
         byte byteVal = (byte) (value & 0XFF);
-        LogHelper.printLevel(LOG, Level.INFO, "Write IO port: {}, value: {}", port, value, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "Write IO port: {}, value: {}", port, value, verbose);
         switch (port) {
             case 0x80:
             case 0xC0:
@@ -233,7 +231,7 @@ public class MsxBus extends DeviceAwareBus<Tms9918aVdp> implements Z80BusProvide
 
         }
         res &= 0xFF;
-        LogHelper.printLevel(LOG, Level.INFO, "Read IO port: {}, value: {}", port, res, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "Read IO port: {}, value: {}", port, res, verbose);
         return res;
     }
 

@@ -20,14 +20,14 @@
 package omegadrive.ui;
 
 import com.google.common.base.Strings;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.SystemLoader;
 import omegadrive.input.InputProvider;
 import omegadrive.input.InputProvider.PlayerNumber;
 import omegadrive.system.SystemProvider;
 import omegadrive.util.*;
 import omegadrive.util.FileLoader.FileResourceType;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;

@@ -19,16 +19,14 @@
 
 package omegadrive.vdp;
 
-import omegadrive.util.LogHelper;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.util.RegionDetector;
 import omegadrive.util.VideoMode;
 import omegadrive.vdp.gen.VdpInterruptHandler;
 import omegadrive.vdp.model.RenderType;
 import omegadrive.vdp.model.Tms9918a;
 import omegadrive.vdp.model.VdpMemory;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -347,7 +345,7 @@ public class Tms9918aVdp implements Tms9918a {
     public final byte readVRAMData() {
         byte result = readAhead;
         readAhead = (byte) mem[readWriteAddr];
-        LogHelper.printLevel(LOG, Level.INFO, "vdpRead addr: {}, data: {}", readWriteAddr, readAhead, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "vdpRead addr: {}, data: {}", readWriteAddr, readAhead, verbose);
         increaseReadWriteAddr();
         secondByteFlag = false;
         return result;
@@ -361,7 +359,7 @@ public class Tms9918aVdp implements Tms9918a {
     public final void writeVRAMData(byte value) {
         readAhead = value;
         mem[readWriteAddr] = readAhead;
-        LogHelper.printLevel(LOG, Level.INFO, "vdpWrite addr: {} , data: {}", readWriteAddr, value & 0xFF, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "vdpWrite addr: {} , data: {}", readWriteAddr, value & 0xFF, verbose);
         increaseReadWriteAddr();
         secondByteFlag = false;
     }
@@ -405,7 +403,7 @@ public class Tms9918aVdp implements Tms9918a {
 
     private void updateRegister(int regNum, int value) {
         if (regNum < REGISTERS && registers[regNum] != value) {
-            LogHelper.printLevel(LOG, Level.INFO, "vdpWriteReg {}, data: {}", regNum, value & 0xFF, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "vdpWriteReg {}, data: {}", regNum, value & 0xFF, verbose);
             registers[regNum] = value;
             if (regNum < 2) {
                 updateTmsMode();

@@ -19,18 +19,17 @@
 
 package omegadrive.vdp.gen;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.bus.gen.GenesisBusProvider;
 import omegadrive.util.*;
 import omegadrive.vdp.model.*;
 import omegadrive.vdp.util.UpdatableViewer;
 import omegadrive.vdp.util.VdpDebugView;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.message.ParameterizedMessage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.stream.IntStream;
 
 import static omegadrive.vdp.model.GenesisVdpProvider.VdpRegisterName.getRegisterName;
@@ -242,7 +241,7 @@ public class GenesisVdp implements GenesisVdpProvider {
         );
         if (control != lastControl) {
             lastControl = control;
-            LogHelper.printLevel(LOG, Level.INFO, "readControl: {}", control, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "readControl: {}", control, verbose);
         }
         return control;
     }
@@ -421,8 +420,8 @@ public class GenesisVdp implements GenesisVdpProvider {
     protected void writeDataPortInternal(int data) {
         writePendingControlPort = false;
         if (vramMode == null) {
-            LogHelper.printLevel(LOG, Level.WARN, "Invalid writeDataPort, vramMode {}, data: {}, address: {}",
-                    vramMode, data, addressRegister, true);
+            //LogHelper.printLevel(LOG, Level.WARNING, "Invalid writeDataPort, vramMode {}, data: {}, address: {}",
+            //        vramMode, data, addressRegister, true);
         }
         fifoPush(addressRegister, data);
         addressRegister += autoIncrementData;
@@ -455,8 +454,8 @@ public class GenesisVdp implements GenesisVdpProvider {
         boolean invalidEntry = entry.vdpRamMode == null || !entry.vdpRamMode.isWriteMode();
 
         if (invalidEntry) {
-            LOG.printf(Level.WARN, "FIFO write on invalid target: %s, data: %x, address: %x",
-                    entry.vdpRamMode, entry.data, entry.addressRegister);
+            //LOG.printf(Level.WARNING, "FIFO write on invalid target: %s, data: %x, address: %x",
+            //        entry.vdpRamMode, entry.data, entry.addressRegister);
             fifoPop();
             doWrite = false;
             evaluateVdpBusyState();
@@ -465,13 +464,13 @@ public class GenesisVdp implements GenesisVdpProvider {
         if (byteWide && !entry.firstByteWritten) {
             entry.firstByteWritten = true;
             doWrite = false;
-            LogHelper.printLevel(LOG, Level.INFO, "writeVram first byte: {}, data: {}, address: {}",
-                    entry.vdpRamMode, entry.data, entry.addressRegister, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "writeVram first byte: {}, data: {}, address: {}",
+            //        entry.vdpRamMode, entry.data, entry.addressRegister, verbose);
         }
         if (doWrite) {
             fifoPop();
-            LogHelper.printLevel(LOG, Level.INFO, "writeVram: {}, data: {}, address: {}",
-                    entry.vdpRamMode, entry.data, entry.addressRegister, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "writeVram: {}, data: {}, address: {}",
+            //        entry.vdpRamMode, entry.data, entry.addressRegister, verbose);
             if (exVram && entry.vdpRamMode == VramMode.vramWrite) {
                 memoryInterface.writeVramByte(entry.addressRegister, entry.data & 0xFF);
             } else {
@@ -530,8 +529,8 @@ public class GenesisVdp implements GenesisVdpProvider {
                 LOG.error("Unexpected vramMode: {}", vramMode);
                 break;
         }
-        LogHelper.printLevel(LOG, Level.INFO, "readDataPort, address {} , result {}, size {}", addressRegister, res,
-                Size.WORD, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "readDataPort, address {} , result {}, size {}", addressRegister, res,
+         //       Size.WORD, verbose);
         addressRegister += autoIncrementData;
         return res;
     }
@@ -540,21 +539,21 @@ public class GenesisVdp implements GenesisVdpProvider {
         if (!writePendingControlPort) {
             firstWrite = data;
             writePendingControlPort = true;
-            LogHelper.printLevel(LOG, Level.INFO, "writeAddr-1, firstWord: {}, address: {}, code: {}"
-                    , firstWrite, addressRegister, codeRegister, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "writeAddr-1, firstWord: {}, address: {}, code: {}"
+            //        , firstWrite, addressRegister, codeRegister, verbose);
         } else {
             writePendingControlPort = false;
             long all = ((firstWrite << 16) | data);
-            LogHelper.printLevel(LOG, Level.INFO,
-                    "writeAddr-2: secondWord: {}, address: {}, code: {}, dataLong: {}, mode: {}"
-                    , data, addressRegister, codeRegister, all, vramMode, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO,
+             //       "writeAddr-2: secondWord: {}, address: {}, code: {}, dataLong: {}, mode: {}"
+             //       , data, addressRegister, codeRegister, all, vramMode, verbose);
             if ((codeRegister & 0b10_0000) > 0) { // DMA
                 VdpDmaHandler.DmaMode dmaMode = dmaHandler.setupDma(vramMode, all, m1);
                 if (dmaMode == VdpDmaHandler.DmaMode.MEM_TO_VRAM) {
                     bus.setVdpBusyState(VdpBusyState.MEM_TO_VRAM);
                 }
-                LogHelper.printLevel(LOG, Level.INFO, "After DMA setup, writeAddr: {}, data: {}, firstWrite: {}"
-                        , addressRegister, all, writePendingControlPort, verbose);
+                //LogHelper.printLevel(LOG, Level.INFO, "After DMA setup, writeAddr: {}, data: {}, firstWrite: {}"
+                 //       , addressRegister, all, writePendingControlPort, verbose);
             } else if(ENABLE_READ_AHEAD && (codeRegister & 1) == 0){ //vdp read
                 pendingReadEntry.data = readDataPortInternal();
                 pendingReadEntry.vdpRamMode = vramMode;
@@ -573,7 +572,7 @@ public class GenesisVdp implements GenesisVdpProvider {
             LOG.warn("Ignoring write to invalid VPD register: {}, mode5: {}, value: {}", reg, m5, dataControl);
             return;
         }
-        LogHelper.printLevel(LOG, Level.INFO, "writeReg: {}, data: {}", reg, dataControl, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "writeReg: {}, data: {}", reg, dataControl, verbose);
         logRegisterChange(reg, dataControl);
         registers[reg] = dataControl;
         updateVariables(reg, dataControl);
@@ -652,9 +651,11 @@ public class GenesisVdp implements GenesisVdpProvider {
         int current = registers[reg];
         //&& reg < 0x13 && interruptHandler.isActiveScreen()
         if (regVerbose && current != data && reg < 0x13) {
-            String msg = new ParameterizedMessage("{} changed from: {}, to: {} -- de{}",
+            /*String msg = new ParameterizedMessage("{} changed from: {}, to: {} -- de{}",
                     getRegisterName(reg), Long.toHexString(current), Long.toHexString(data), (displayEnable ? 1 : 0)).getFormattedMessage();
             LOG.info(getVdpStateString(msg));
+
+             */
         }
     }
 
@@ -678,7 +679,7 @@ public class GenesisVdp implements GenesisVdpProvider {
             boolean dmaDone = dmaHandler.doDmaSlot(videoMode);
             dma = dmaDone ? 0 : dma;
             if (dma == 0 && dmaDone) {
-                LogHelper.printLevel(LOG, Level.INFO, "{}: OFF", dmaHandler.getDmaMode(), verbose);
+                //LogHelper.printLevel(LOG, Level.INFO, "{}: OFF", dmaHandler.getDmaMode(), verbose);
                 evaluateVdpBusyState();
             }
         }

@@ -19,9 +19,9 @@
 
 package omegadrive.memory;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class MemoryProvider implements IMemoryProvider {
 

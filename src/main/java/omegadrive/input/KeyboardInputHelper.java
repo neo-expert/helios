@@ -24,8 +24,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Table;
 import omegadrive.joypad.JoypadProvider.JoypadButton;
 import omegadrive.ui.KeyBindingsHandler;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import javax.swing.*;
 import java.util.Map;

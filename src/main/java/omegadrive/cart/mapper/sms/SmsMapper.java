@@ -26,11 +26,11 @@ import omegadrive.cart.mapper.RomMapper;
 import omegadrive.memory.IMemoryProvider;
 import omegadrive.util.LogHelper;
 import omegadrive.util.Size;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
+import java.util.logging.Level;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public class SmsMapper {
 
@@ -233,7 +233,7 @@ public class SmsMapper {
                     frameReg[frameRegNum] = data;
                     break;
             }
-            LogHelper.printLevel(LOG, Level.INFO,"writeMappingReg: {} , data: {}", addressL, data, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO,"writeMappingReg: {} , data: {}", addressL, data, verbose);
         }
 
         private void handleSramState(int data) {

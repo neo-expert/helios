@@ -25,8 +25,8 @@ import omegadrive.bus.DeviceAwareBus;
 import omegadrive.memory.IMemoryRam;
 import omegadrive.sound.fm.FmProvider;
 import omegadrive.util.Size;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public class GenesisZ80BusProviderImpl extends DeviceAwareBus implements GenesisZ80BusProvider {
     private static Logger LOG = LogManager.getLogger(GenesisZ80BusProviderImpl.class.getSimpleName());

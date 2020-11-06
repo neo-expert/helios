@@ -19,12 +19,12 @@
 
 package omegadrive.system.perf;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.SystemLoader;
 import omegadrive.system.Sms;
 import omegadrive.ui.DisplayWindow;
 import omegadrive.util.RegionDetector;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.time.Duration;
 import java.util.Optional;

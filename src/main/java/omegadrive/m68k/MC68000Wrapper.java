@@ -19,13 +19,16 @@
 
 package omegadrive.m68k;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import m68k.cpu.MC68000;
 import m68k.cpu.instructions.TAS;
 import m68k.memory.AddressSpace;
 import omegadrive.bus.gen.GenesisBusProvider;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import java.util.logging.Level;
 
 /**
  *
@@ -86,7 +89,7 @@ public class MC68000Wrapper implements M68kProvider {
             LOG.error("68k error", e);
             handleException(ILLEGAL_ACCESS_EXCEPTION);
             if (STOP_ON_EXCEPTION) {
-                MC68000Helper.printCpuState(m68k, Level.ERROR, "", addressSpace.size());
+                //MC68000Helper.printCpuState(m68k, Level.SEVERE, "", addressSpace.size());
                 throw e;
             }
         }

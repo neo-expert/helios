@@ -19,6 +19,8 @@
 
 package omegadrive.system;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.SystemLoader;
 import omegadrive.bus.z80.ColecoBus;
 import omegadrive.bus.z80.MsxBus;
@@ -39,8 +41,6 @@ import omegadrive.util.VideoMode;
 import omegadrive.vdp.Tms9918aVdp;
 import omegadrive.z80.Z80CoreWrapper;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Path;
 

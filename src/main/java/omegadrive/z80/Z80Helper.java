@@ -1,8 +1,8 @@
 package omegadrive.z80;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.z80.disasm.Z80Dasm;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import z80core.IMemIoOps;
 import z80core.Z80;
 import z80core.Z80State;

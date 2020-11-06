@@ -2,10 +2,10 @@ package omegadrive.system.perf;
 
 import com.google.common.collect.Table;
 import com.google.common.collect.TreeBasedTable;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.sound.fm.AudioRateControl;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.Files;

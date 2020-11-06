@@ -29,8 +29,8 @@ import omegadrive.util.RegionDetector;
 import omegadrive.util.Size;
 import omegadrive.vdp.SmsVdp;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import static omegadrive.sound.fm.ym2413.Ym2413Provider.FmReg.ADDR_LATCH_REG;
 import static omegadrive.sound.fm.ym2413.Ym2413Provider.FmReg.DATA_REG;

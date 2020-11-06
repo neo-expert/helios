@@ -2,8 +2,6 @@ package omegadrive.sound.fm;
 
 import omegadrive.util.RegionDetector;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.jctools.queues.atomic.SpscAtomicArrayQueue;
 
 import javax.sound.sampled.AudioFormat;

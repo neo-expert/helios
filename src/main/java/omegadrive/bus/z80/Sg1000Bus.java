@@ -23,8 +23,8 @@ import omegadrive.bus.DeviceAwareBus;
 import omegadrive.util.Size;
 import omegadrive.vdp.Tms9918aVdp;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public class Sg1000Bus extends DeviceAwareBus<Tms9918aVdp> implements Z80BusProvider {
 

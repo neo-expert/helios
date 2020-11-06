@@ -3,8 +3,6 @@ package omegadrive.bus.gen;
 import com.google.common.io.Files;
 import omegadrive.util.Size;
 import omegadrive.util.SoundUtil;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.digitalmediaserver.cuelib.CueSheet;
 import org.digitalmediaserver.cuelib.TrackData;
 
@@ -17,6 +15,8 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * MsuMdHandlerImpl

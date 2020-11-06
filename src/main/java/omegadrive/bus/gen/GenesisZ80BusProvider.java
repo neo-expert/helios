@@ -23,8 +23,8 @@ import omegadrive.bus.BaseBusProvider;
 import omegadrive.memory.IMemoryRam;
 import omegadrive.z80.Z80Memory;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public interface GenesisZ80BusProvider extends BaseBusProvider {
 

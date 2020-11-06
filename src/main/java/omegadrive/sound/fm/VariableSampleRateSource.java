@@ -19,11 +19,11 @@
 
 package omegadrive.sound.fm;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.sound.SoundProvider;
 import omegadrive.util.SoundUtil;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.jctools.queues.atomic.SpscAtomicArrayQueue;
 
 import javax.sound.sampled.AudioFormat;

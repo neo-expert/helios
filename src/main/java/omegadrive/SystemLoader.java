@@ -32,15 +32,12 @@ import omegadrive.ui.SwingWindow;
 import omegadrive.util.RegionDetector;
 import omegadrive.util.Util;
 import omegadrive.util.ZipUtil;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 //import ru.krlvm.swingdpi.SwingDPI;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.FileReader;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;

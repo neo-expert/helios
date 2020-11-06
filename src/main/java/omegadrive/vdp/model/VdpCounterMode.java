@@ -19,9 +19,9 @@
 
 package omegadrive.vdp.model;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.util.VideoMode;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.EnumSet;
 

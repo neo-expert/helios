@@ -19,14 +19,14 @@
 
 package omegadrive.ui;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.input.InputProvider;
 import omegadrive.input.InputProvider.PlayerNumber;
 import omegadrive.input.KeyboardInputHelper;
 import omegadrive.joypad.JoypadProvider.JoypadButton;
 import omegadrive.system.SystemProvider.SystemEvent;
 import omegadrive.util.FileLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;

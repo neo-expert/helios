@@ -24,12 +24,12 @@ import omegadrive.sound.psg.PsgProvider;
 import omegadrive.system.perf.Telemetry;
 import omegadrive.util.RegionDetector;
 import omegadrive.util.SoundUtil;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.sound.sampled.SourceDataLine;
 import java.util.Arrays;
 import java.util.concurrent.locks.LockSupport;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public class JavaSoundManager extends AbstractSoundManager {
 

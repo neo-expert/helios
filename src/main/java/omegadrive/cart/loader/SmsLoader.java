@@ -23,8 +23,6 @@ import com.google.common.collect.ImmutableMap;
 import omegadrive.SystemLoader;
 import omegadrive.cart.mapper.MapperSelector;
 import omegadrive.cart.mapper.sms.SmsMapper;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -33,6 +31,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * SMS roms db from the MEKA project

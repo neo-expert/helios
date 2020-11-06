@@ -19,14 +19,14 @@
 
 package omegadrive.vdp.gen;
 
+import omegadrive.Level;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.bus.gen.BusArbiter;
 import omegadrive.util.VideoMode;
 import omegadrive.vdp.model.BaseVdpProvider;
 import omegadrive.vdp.model.VdpCounterMode;
 import omegadrive.vdp.model.VdpSlotType;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Collections;
 import java.util.List;

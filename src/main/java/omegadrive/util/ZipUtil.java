@@ -2,8 +2,8 @@ package omegadrive.util;
 
 import com.google.common.io.ByteStreams;
 import omegadrive.SystemLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.io.Closeable;
 import java.io.IOException;

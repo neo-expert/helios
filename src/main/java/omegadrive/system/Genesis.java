@@ -19,6 +19,8 @@
 
 package omegadrive.system;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.SystemLoader;
 import omegadrive.bus.gen.GenesisBus;
 import omegadrive.bus.gen.GenesisBusProvider;
@@ -41,8 +43,6 @@ import omegadrive.vdp.model.BaseVdpProvider;
 import omegadrive.vdp.model.GenesisVdpProvider;
 import omegadrive.z80.Z80CoreWrapper;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Path;
 

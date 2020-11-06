@@ -1,5 +1,7 @@
 package omegadrive.ssp16;
 
+import omegadrive.LogManager;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.stream.IntStream;

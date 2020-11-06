@@ -19,11 +19,11 @@
 
 package omegadrive.sound.fm.ym2612.nukeykt;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.sound.fm.MdFmProvider;
 import omegadrive.sound.fm.VariableSampleRateSource;
 import omegadrive.sound.fm.ym2612.Ym2612RegSupport;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.sound.sampled.AudioFormat;
 import java.io.Serializable;

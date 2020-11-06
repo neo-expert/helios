@@ -19,8 +19,8 @@
 
 package omegadrive.util;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.awt.*;
 import java.util.EnumSet;

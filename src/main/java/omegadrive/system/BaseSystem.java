@@ -20,6 +20,8 @@
 package omegadrive.system;
 
 import omegadrive.Device;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.SystemLoader;
 import omegadrive.bus.BaseBusProvider;
 import omegadrive.input.InputProvider;
@@ -36,8 +38,6 @@ import omegadrive.util.RegionDetector;
 import omegadrive.util.Util;
 import omegadrive.util.VideoMode;
 import omegadrive.vdp.model.BaseVdpProvider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Path;
 import java.time.Duration;

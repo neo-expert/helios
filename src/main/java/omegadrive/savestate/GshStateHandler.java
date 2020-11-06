@@ -30,8 +30,6 @@ import omegadrive.ssp16.Ssp16Types;
 import omegadrive.util.FileLoader;
 import omegadrive.util.Util;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
 import java.nio.ByteBuffer;
@@ -39,6 +37,8 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.stream.IntStream;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public class GshStateHandler extends GstStateHandler {
 

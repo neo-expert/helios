@@ -22,8 +22,8 @@ package omegadrive.joypad;
 
 import com.google.common.collect.Maps;
 import omegadrive.input.KeyboardInputHelper;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

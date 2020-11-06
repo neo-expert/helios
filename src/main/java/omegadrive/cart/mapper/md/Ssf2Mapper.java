@@ -22,14 +22,12 @@ package omegadrive.cart.mapper.md;
 import omegadrive.bus.gen.GenesisBusProvider;
 import omegadrive.cart.mapper.RomMapper;
 import omegadrive.memory.IMemoryProvider;
-import omegadrive.util.LogHelper;
 import omegadrive.util.Size;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * A page is specified with 6 bits (bits 7 and 6 are always 0) thus allowing a possible 64 pages
@@ -80,7 +78,7 @@ public class Ssf2Mapper implements RomMapper {
     public long readData(long address, Size size) {
         address = address & 0xFF_FFFF;
         if (address >= BANKABLE_START_ADDRESS && address <= GenesisBusProvider.DEFAULT_ROM_END_ADDRESS) {
-            LogHelper.printLevel(LOG, Level.INFO, "Bank read: {}", address, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "Bank read: {}", address, verbose);
             int bankSelector = (int) (address / BANK_SIZE);
             address = (banks[bankSelector] * BANK_SIZE) + (address - bankSelector * BANK_SIZE);
             return Util.readRom(memory, size, (int) address);
@@ -105,7 +103,7 @@ public class Ssf2Mapper implements RomMapper {
         if (val % 2 == 1 && index > 0) {
             int dataI = (int) (data & 0x3F);
             banks[index] = dataI;
-            LogHelper.printLevel(LOG, Level.INFO, "Bank write to: {}", addressL, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "Bank write to: {}", addressL, verbose);
         }
     }
 

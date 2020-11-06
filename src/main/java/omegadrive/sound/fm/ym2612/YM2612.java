@@ -19,12 +19,12 @@
 
 package omegadrive.sound.fm.ym2612;
 
+import omegadrive.LogManager;
+import omegadrive.Level;
+import omegadrive.Logger;
+import js.Console;
 import omegadrive.sound.fm.MdFmProvider;
 import omegadrive.util.LogHelper;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.message.ParameterizedMessage;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -365,7 +365,7 @@ public final class YM2612 extends Ym2612RegSupport implements MdFmProvider {
         if (isResetting) {
             return;
         }
-        LOG.log(Level.WARN, msg);
+        LOG.log(Level.WARNING, msg);
     }
 
     private void writeReg(int regPart, int regNumber, int data) {
@@ -582,9 +582,13 @@ public final class YM2612 extends Ym2612RegSupport implements MdFmProvider {
         }
         long now = System.nanoTime();
         double delta = ((now - lastEvent) / 1_000_000d);
+        Console.debugger();
+        /*
         ParameterizedMessage pm = new ParameterizedMessage(
                 "{}, {}, {}, {}", delta, str, Integer.toHexString(addr), Integer.toHexString(data));
         LOG.info(pm.getFormattedMessage());
+
+         */
 //        System.out.println(pm.getFormattedMessage());
         lastEvent = now;
     }
@@ -945,7 +949,7 @@ public final class YM2612 extends Ym2612RegSupport implements MdFmProvider {
                 }
                 break;
             default:
-                LogHelper.printLevel(LOG, Level.WARN, "Invalid write to addr: {}, data: {}", address, data, !isResetting);
+                LogHelper.printLevel(LOG, Level.WARNING, "Invalid write to addr: {}, data: {}", address, data, !isResetting);
                 break;
         }
         return 0;
@@ -1024,7 +1028,7 @@ public final class YM2612 extends Ym2612RegSupport implements MdFmProvider {
                 else CH.SLOT[3].AMS = 31;
                 break;
             default:
-                LogHelper.printLevel(LOG, Level.WARN, "Invalid write to addr: {}, data: {}", address, data, !isResetting);
+                LogHelper.printLevel(LOG, Level.WARNING, "Invalid write to addr: {}, data: {}", address, data, !isResetting);
                 break;
         }
         return 0;
@@ -1107,7 +1111,7 @@ public final class YM2612 extends Ym2612RegSupport implements MdFmProvider {
                 YM2612_DAC = flag;
                 break;
             default:
-                LogHelper.printLevel(LOG, Level.WARN, "Unexpected write to addr: {}, data: {}", address, data, !isResetting);
+                LogHelper.printLevel(LOG, Level.WARNING, "Unexpected write to addr: {}, data: {}", address, data, !isResetting);
         }
         return 0;
     }

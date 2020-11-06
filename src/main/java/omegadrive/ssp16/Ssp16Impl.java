@@ -17,8 +17,9 @@ package omegadrive.ssp16;
  * @author Federico Berti
  */
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.util.HashSet;
 import java.util.Set;

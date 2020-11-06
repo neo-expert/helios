@@ -33,14 +33,14 @@ import omegadrive.system.Sms;
 import omegadrive.util.PriorityThreadFactory;
 import omegadrive.util.RegionDetector;
 import omegadrive.util.SoundUtil;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.SourceDataLine;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public abstract class AbstractSoundManager implements SoundProvider {
     private static final Logger LOG = LogManager.getLogger(JavaSoundManager.class.getSimpleName());

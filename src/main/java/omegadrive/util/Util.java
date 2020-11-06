@@ -19,6 +19,7 @@
 
 package omegadrive.util;
 
+import omegadrive.Level;
 import com.google.common.base.Strings;
 import com.google.common.collect.Range;
 import com.google.common.hash.Hasher;
@@ -26,9 +27,8 @@ import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import omegadrive.memory.IMemoryProvider;
 import omegadrive.memory.IMemoryRom;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.io.*;
 import java.time.Duration;

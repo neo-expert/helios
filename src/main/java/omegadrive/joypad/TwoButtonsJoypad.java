@@ -21,8 +21,8 @@ package omegadrive.joypad;
 
 
 import com.google.common.collect.Maps;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import static omegadrive.input.InputProvider.PlayerNumber;
 import static omegadrive.joypad.JoypadProvider.JoypadButton.*;

@@ -23,12 +23,12 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import net.java.games.input.Component;
 import net.java.games.input.Component.Identifier.Button;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import static net.java.games.input.Component.Identifier.Button.Axis;
 import static omegadrive.joypad.JoypadProvider.JoypadButton;
 import static omegadrive.joypad.JoypadProvider.JoypadDirection;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public class JinputGamepadMapping {
 

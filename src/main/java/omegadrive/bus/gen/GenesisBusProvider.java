@@ -25,8 +25,8 @@ import omegadrive.sound.psg.PsgProvider;
 import omegadrive.system.SystemProvider;
 import omegadrive.util.Size;
 import omegadrive.vdp.model.GenesisVdpProvider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import static omegadrive.memory.MemoryProvider.M68K_RAM_SIZE;
 

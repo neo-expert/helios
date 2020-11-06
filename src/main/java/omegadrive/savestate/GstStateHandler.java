@@ -33,8 +33,6 @@ import omegadrive.vdp.model.GenesisVdpProvider;
 import omegadrive.vdp.model.VdpMemory;
 import omegadrive.vdp.model.VdpMemoryInterface;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import z80core.Z80;
 import z80core.Z80State;
 
@@ -42,6 +40,8 @@ import java.nio.ByteBuffer;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.stream.IntStream;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public class GstStateHandler implements GenesisStateHandler {
 

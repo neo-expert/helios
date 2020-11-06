@@ -19,11 +19,11 @@
 
 package omegadrive.vdp;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.util.ImageUtil;
 import omegadrive.util.VideoMode;
 import omegadrive.vdp.model.RenderType;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

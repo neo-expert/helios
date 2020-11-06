@@ -20,9 +20,9 @@
 package omegadrive.savestate;
 
 import omegadrive.util.FileLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import java.nio.file.Paths;
 
 public interface BaseStateHandler {

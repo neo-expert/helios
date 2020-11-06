@@ -19,13 +19,13 @@
 
 package omegadrive.system.perf;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.system.Genesis;
 import omegadrive.ui.DisplayWindow;
 import omegadrive.util.RegionDetector;
 import omegadrive.util.Util;
 import omegadrive.util.VideoMode;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.time.Duration;
 import java.util.Optional;

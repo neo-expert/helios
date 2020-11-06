@@ -21,8 +21,8 @@ package omegadrive.joypad;
 
 import com.google.common.collect.ImmutableMap;
 import omegadrive.input.InputProvider.PlayerNumber;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.util.Arrays;
 import java.util.Collections;

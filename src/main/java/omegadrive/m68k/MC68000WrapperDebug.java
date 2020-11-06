@@ -19,18 +19,18 @@
 
 package omegadrive.m68k;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import m68k.cpu.Cpu;
 import m68k.memory.AddressSpace;
 import omegadrive.bus.gen.GenesisBusProvider;
 import omegadrive.util.Size;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.logging.Level;
 import java.util.stream.IntStream;
 
 public class MC68000WrapperDebug extends MC68000Wrapper {
@@ -238,14 +238,14 @@ public class MC68000WrapperDebug extends MC68000Wrapper {
     }
 
     protected void printCpuState(String head) {
-        MC68000Helper.printCpuState(m68k, Level.INFO, head, addressSpace.size());
+        //MC68000Helper.printCpuState(m68k, Level.INFO, head, addressSpace.size());
     }
 
     protected void printCpuStateIfVerbose(String head) {
         if (!verbose) {
             return;
         }
-        MC68000Helper.printCpuState(m68k, Level.INFO, head, addressSpace.size());
+        //MC68000Helper.printCpuState(m68k, Level.INFO, head, addressSpace.size());
     }
 
     protected void printVerbose() {

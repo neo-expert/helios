@@ -19,9 +19,9 @@
 
 package omegadrive.util;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.memory.IMemoryProvider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 

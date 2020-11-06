@@ -26,8 +26,8 @@ import omegadrive.util.RegionDetector;
 import omegadrive.util.SoundUtil;
 import omegadrive.util.Util;
 import omegadrive.vdp.model.BaseVdpProvider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import javax.sound.sampled.AudioFormat;
 

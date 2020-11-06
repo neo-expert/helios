@@ -19,6 +19,9 @@
 
 package omegadrive.cart.mapper.md;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
+
 import omegadrive.SystemLoader;
 import omegadrive.cart.MdCartInfoProvider;
 import omegadrive.cart.loader.MdRomDbModel;
@@ -26,8 +29,6 @@ import omegadrive.cart.mapper.BackupMemoryMapper;
 import omegadrive.cart.mapper.RomMapper;
 import omegadrive.util.Size;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import static omegadrive.cart.MdCartInfoProvider.DEFAULT_SRAM_END_ADDRESS;
 import static omegadrive.cart.MdCartInfoProvider.DEFAULT_SRAM_START_ADDRESS;

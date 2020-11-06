@@ -27,12 +27,12 @@ import omegadrive.util.Size;
 import omegadrive.util.Util;
 import omegadrive.vdp.Tms9918aVdp;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.logging.Level;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * see
@@ -95,7 +95,7 @@ public class ColecoBus extends DeviceAwareBus<Tms9918aVdp> implements Z80BusProv
     public void writeIoPort(int port, int value) {
         port &= 0xFF;
         byte byteVal = (byte) (value & 0XFF);
-        LogHelper.printLevel(LOG, Level.INFO, "Write port: {}, value: {}", port, value, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "Write port: {}, value: {}", port, value, verbose);
         switch (port & 0xE1) {
             case 0x80:
             case 0xC0:
@@ -122,7 +122,7 @@ public class ColecoBus extends DeviceAwareBus<Tms9918aVdp> implements Z80BusProv
     @Override
     public int readIoPort(int port) {
         port &= 0xFF;
-        LogHelper.printLevel(LOG, Level.INFO, "Read port: {}", port, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "Read port: {}", port, verbose);
         switch (port & 0xE1) {
             case 0xA0:
                 //                LOG.warn("read: vdp vram");

@@ -20,10 +20,10 @@
 package omegadrive.sound.fm.ym2413;
 
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.sound.fm.FmProvider;
 import omegadrive.sound.fm.VariableSampleRateSource;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.sound.sampled.AudioFormat;
 

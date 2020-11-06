@@ -23,14 +23,14 @@ import omegadrive.cart.mapper.RomMapper;
 import omegadrive.memory.IMemoryProvider;
 import omegadrive.ssp16.Ssp16;
 import omegadrive.util.Size;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import static omegadrive.ssp16.Ssp16.*;
 import static omegadrive.ssp16.Ssp16Types.Ssp1601_t;
 import static omegadrive.ssp16.Ssp16Types.Ssp16Reg.SSP_PM0;
 import static omegadrive.ssp16.Ssp16Types.Ssp16Reg.SSP_XST;
 import static omegadrive.ssp16.Ssp16Types.Svp_t;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public class SvpMapper implements RomMapper, SvpBus {
 

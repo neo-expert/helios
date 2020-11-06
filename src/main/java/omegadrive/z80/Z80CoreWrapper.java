@@ -19,14 +19,14 @@
 
 package omegadrive.z80;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.bus.BaseBusProvider;
 import omegadrive.bus.gen.GenesisBusProvider;
 import omegadrive.bus.gen.GenesisZ80BusProvider;
 import omegadrive.bus.gen.GenesisZ80BusProviderImpl;
 import omegadrive.util.Size;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import z80core.Z80;
 import z80core.Z80State;
 

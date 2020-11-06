@@ -28,9 +28,7 @@ import omegadrive.sound.fm.FmProvider;
 import omegadrive.ssp16.Ssp16;
 import omegadrive.vdp.model.BaseVdpProvider;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.config.Configurator;
+
 
 public interface GenesisStateHandler extends BaseStateHandler {
 
@@ -125,9 +123,9 @@ public interface GenesisStateHandler extends BaseStateHandler {
 
     default void processState(BaseVdpProvider vdp, Z80Provider z80, GenesisBusProvider bus,
                               SoundProvider sound, M68kProvider cpu, IMemoryProvider mem) {
-        Level prev = LogManager.getRootLogger().getLevel();
+        //Level prev = LogManager.getRootLogger().getLevel();
         try {
-            Configurator.setRootLevel(Level.ERROR);
+            //Configurator.setRootLevel(Level.ERROR);
             if (getType() == Type.LOAD) {
                 loadFmState(sound.getFm());
                 loadVdpState(vdp);
@@ -140,7 +138,7 @@ public interface GenesisStateHandler extends BaseStateHandler {
                 saveVdp(vdp);
             }
         } finally {
-            Configurator.setRootLevel(prev);
+            //Configurator.setRootLevel(prev);
         }
         if (getType() == Type.LOAD) {
             LOG.info("Savestate loaded from: {}", getFileName());

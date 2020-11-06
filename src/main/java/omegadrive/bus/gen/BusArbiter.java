@@ -20,14 +20,13 @@
 package omegadrive.bus.gen;
 
 import omegadrive.Device;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.m68k.M68kProvider;
 import omegadrive.vdp.model.BaseVdpProvider;
 import omegadrive.vdp.model.GenesisVdpProvider;
 import omegadrive.vdp.model.GenesisVdpProvider.VdpBusyState;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.message.ParameterizedMessage;
 
 public class BusArbiter implements Device, BaseVdpProvider.VdpEventListener {
 
@@ -246,8 +245,8 @@ public class BusArbiter implements Device, BaseVdpProvider.VdpEventListener {
 
     private void logInfo(String str, Object... args) {
         if (verbose) {
-            String msg = ParameterizedMessage.format(str, args);
-            LOG.info(msg + vdp.getVdpStateString());
+            //String msg = ParameterizedMessage.format(str, args);
+            //LOG.info(msg + vdp.getVdpStateString());
         }
     }
 

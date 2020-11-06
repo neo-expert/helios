@@ -20,6 +20,8 @@
 package omegadrive.savestate;
 
 import omegadrive.SystemLoader;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.bus.z80.SmsBus;
 import omegadrive.bus.z80.Z80BusProvider;
 import omegadrive.memory.IMemoryProvider;
@@ -30,8 +32,6 @@ import omegadrive.util.Util;
 import omegadrive.vdp.SmsVdp;
 import omegadrive.vdp.model.BaseVdpProvider;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import z80core.Z80;
 import z80core.Z80State;
 

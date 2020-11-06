@@ -23,8 +23,8 @@ import com.google.common.collect.ImmutableList;
 import omegadrive.input.jinput.JinputGamepadInputProvider;
 import omegadrive.joypad.JoypadProvider;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.io.File;
 import java.util.List;

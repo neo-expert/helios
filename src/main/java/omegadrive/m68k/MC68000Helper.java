@@ -19,14 +19,13 @@
 
 package omegadrive.m68k;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import m68k.cpu.Cpu;
 import m68k.cpu.DisassembledInstruction;
 import m68k.cpu.Instruction;
 import m68k.cpu.MC68000;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.Set;
@@ -152,6 +151,7 @@ public class MC68000Helper {
         return sb.toString();
     }
 
+    /*
     public static void printCpuState(Cpu cpu, Level level, String head, int memorySize) {
         try {
             String str = MC68000Helper.dumpInfo(cpu, cpu.getPC(), true, memorySize);
@@ -161,4 +161,6 @@ public class MC68000Helper {
             LOG.warn("Unable to dump the state: " + pc, e);
         }
     }
+
+     */
 }

@@ -19,9 +19,9 @@
 
 package omegadrive.util;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.SystemLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;

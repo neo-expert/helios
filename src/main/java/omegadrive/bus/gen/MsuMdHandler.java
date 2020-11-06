@@ -1,12 +1,12 @@
 package omegadrive.bus.gen;
 
 import omegadrive.util.Size;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.sound.sampled.AudioFormat;
 import java.io.File;
 import java.util.Optional;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * Federico Berti

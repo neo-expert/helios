@@ -31,14 +31,13 @@ import omegadrive.sound.fm.FmProvider;
 import omegadrive.sound.psg.PsgProvider;
 import omegadrive.system.SystemProvider;
 import omegadrive.util.Size;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.util.Util;
 import omegadrive.vdp.model.GenesisVdpProvider;
 import omegadrive.vdp.model.GenesisVdpProvider.VdpBusyState;
 import omegadrive.vdp.model.GenesisVdpProvider.VdpPortType;
 import omegadrive.z80.Z80Provider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.message.ParameterizedMessage;
 
 import java.util.Objects;
 
@@ -850,7 +849,7 @@ public class GenesisBus extends DeviceAwareBus<GenesisVdpProvider> implements Ge
 
     private static void logInfo(String str, Object... args) {
         if (verbose) {
-            LOG.info(new ParameterizedMessage(str, args));
+            //LOG.info(new ParameterizedMessage(str, args));
         }
     }
 

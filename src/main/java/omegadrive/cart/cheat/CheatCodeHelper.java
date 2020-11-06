@@ -19,9 +19,9 @@
 
 package omegadrive.cart.cheat;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.bus.gen.GenesisBusProvider;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

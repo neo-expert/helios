@@ -19,10 +19,10 @@
 
 package omegadrive.cart.mapper.msx;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.cart.mapper.RomMapper;
 import omegadrive.util.Size;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import static omegadrive.cart.mapper.msx.MsxAsciiMapper.*;
 

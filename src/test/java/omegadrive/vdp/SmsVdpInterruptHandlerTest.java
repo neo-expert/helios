@@ -24,9 +24,8 @@ import omegadrive.vdp.gen.VdpInterruptHandler;
 import omegadrive.vdp.gen.VdpInterruptHandlerTest;
 import omegadrive.vdp.model.BaseVdpProvider;
 import omegadrive.vdp.model.VdpCounterMode;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.junit.Assert;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import org.junit.Ignore;
 import org.junit.Test;
 

@@ -25,8 +25,8 @@ import omegadrive.vdp.gen.VdpScrollHandler.HSCROLL;
 import omegadrive.vdp.gen.VdpScrollHandler.ScrollContext;
 import omegadrive.vdp.gen.VdpScrollHandler.VSCROLL;
 import omegadrive.vdp.model.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.awt.*;
 import java.util.Arrays;

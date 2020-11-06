@@ -1,10 +1,8 @@
 package omegadrive.cart.mapper.md;
 
 import omegadrive.cart.loader.MdRomDbModel;
-import omegadrive.util.LogHelper;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * I2cEeprom
@@ -72,7 +70,7 @@ public class I2cEeprom {
     public void eeprom_i2c_in(int data) {
         scl = (data & 2) >> 1;
         sda = data & 1;
-        LogHelper.printLevel(LOG, Level.INFO, "SCL {}, SDA {}", scl, sda, verbose);
+        //LogHelper.printLevel(LOG, Level.INFO, "SCL {}, SDA {}", scl, sda, verbose);
         if (state == EepromState.STANDBY) {
             checkStart();
         } else if (state == EepromState.GET_WORD_ADDR) {
@@ -94,12 +92,12 @@ public class I2cEeprom {
                 /* return memory array (max 64kB) DATA bits */
                 int index = address & 0xffff;
                 int res = ((sram[index] >> (8 - cycles)) & 1);
-                LogHelper.printLevel(LOG, Level.INFO, "{}, read {}, on cycle {}", state, res, cycles, verbose);
+                //LogHelper.printLevel(LOG, Level.INFO, "{}, read {}, on cycle {}", state, res, cycles, verbose);
                 return res;
             }
         } else if (cycles == 9) {
             /* ACK cycle */
-            LogHelper.printLevel(LOG, Level.INFO, "{}, ack on cycle {}", state, cycles, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "{}, ack on cycle {}", state, cycles, verbose);
             return 0;
         }
 
@@ -120,9 +118,9 @@ public class I2cEeprom {
             if (cycles < 9) {
                 /* latch DATA bits 7-0 to write buffer */
                 buffer |= (sda << (8 - cycles));
-                LogHelper.printLevel(LOG, Level.INFO, "{}, buffer {}", state, buffer, verbose);
+                //LogHelper.printLevel(LOG, Level.INFO, "{}, buffer {}", state, buffer, verbose);
             } else {
-                LogHelper.printLevel(LOG, Level.INFO, "{}, val {}", state, buffer, verbose);
+                //LogHelper.printLevel(LOG, Level.INFO, "{}, val {}", state, buffer, verbose);
             }
         }
     }
@@ -142,7 +140,7 @@ public class I2cEeprom {
             if (cycles == 9) {
                 if (sda > 0) {
                     state = EepromState.WAIT_STOP;
-                    LogHelper.printLevel(LOG, Level.INFO, "{}", state, verbose);
+                    //LogHelper.printLevel(LOG, Level.INFO, "{}", state, verbose);
                 } else {
                     /* increment Word Address (roll up at maximum array size) */
                     address = (address + 1) & sizeMask;
@@ -162,18 +160,18 @@ public class I2cEeprom {
                 cycles = 1;
                 state = rw > 0 ? EepromState.READ : EepromState.WRITE;
                 buffer = 0;
-                LogHelper.printLevel(LOG, Level.INFO, "{}", state, verbose);
+                //LogHelper.printLevel(LOG, Level.INFO, "{}", state, verbose);
             }
             /* look for SCL LOW to HIGH transition */
         } else if (prevScl < scl) {
             if (cycles < 8) {
                 /* latch Word Address bits 6-0 */
                 address |= (sda << (7 - cycles));
-                LogHelper.printLevel(LOG, Level.INFO, "{}, address: {}, cycles: {}", state, address, cycles, verbose);
+                //LogHelper.printLevel(LOG, Level.INFO, "{}, address: {}, cycles: {}", state, address, cycles, verbose);
             } else if (cycles == 8) {
                 /* latch R/W bit */
                 rw = sda;
-                LogHelper.printLevel(LOG, Level.INFO, "{}, rw latch: {}", state, rw, verbose);
+                //LogHelper.printLevel(LOG, Level.INFO, "{}, rw latch: {}", state, rw, verbose);
             }
         }
     }
@@ -183,7 +181,7 @@ public class I2cEeprom {
         if ((prevScl & scl) > 0 && (prevSda > sda)) {
             state = EepromState.GET_WORD_ADDR;
             cycles = 0;
-            LogHelper.printLevel(LOG, Level.INFO, "{}", state, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "{}", state, verbose);
         }
     }
 
@@ -191,7 +189,7 @@ public class I2cEeprom {
         /* detect SDA LOW to HIGH transition while SCL is held HIGH */
         if (((prevScl & scl) > 0) && (sda > prevSda)) {
             state = EepromState.STANDBY;
-            LogHelper.printLevel(LOG, Level.INFO, "{}", state, verbose);
+            //LogHelper.printLevel(LOG, Level.INFO, "{}", state, verbose);
         }
     }
 

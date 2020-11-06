@@ -28,8 +28,8 @@ import omegadrive.joypad.JoypadProvider.JoypadAction;
 import omegadrive.joypad.JoypadProvider.JoypadButton;
 import omegadrive.util.PriorityThreadFactory;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;

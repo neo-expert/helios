@@ -22,13 +22,13 @@ package omegadrive.cart.mapper;
 import omegadrive.SystemLoader;
 import omegadrive.util.FileLoader;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 public abstract class BackupMemoryMapper {
 

@@ -21,9 +21,8 @@ package omegadrive.vdp.gen;
 
 import omegadrive.vdp.model.GenesisVdpProvider;
 import omegadrive.vdp.model.IVdpFifo;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.message.ParameterizedMessage;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
@@ -76,16 +75,20 @@ public class VdpFifo implements IVdpFifo {
 
     private void logState(VdpFifoEntry entry, String type) {
         if (logEnable) {
+            /*
             ParameterizedMessage pm = new ParameterizedMessage(
                     "Fifo {}: {}, address: {}, data: {}, push: {}, pop: {}, size: {}\nstate: {}", type,
                     entry.vdpRamMode,
                     Integer.toHexString(entry.addressRegister), Integer.toHexString(entry.data),
                     pushPointer, popPointer, fifoSize, Arrays.toString(fifo));
             String str = pm.getFormattedMessage();
+
+
             LOG.info(str);
             if (printToSysOut) {
                 System.out.println(str);
             }
+             */
 
         }
     }

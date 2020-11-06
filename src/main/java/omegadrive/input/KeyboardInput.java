@@ -22,14 +22,14 @@ package omegadrive.input;
 import omegadrive.SystemLoader;
 import omegadrive.joypad.JoypadProvider;
 import omegadrive.joypad.JoypadProvider.JoypadButton;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import static omegadrive.input.InputProvider.PlayerNumber;
 

@@ -19,10 +19,10 @@
 
 package omegadrive.vdp.gen;
 
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.vdp.model.GenesisVdpProvider;
 import omegadrive.vdp.model.VdpMemoryInterface;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

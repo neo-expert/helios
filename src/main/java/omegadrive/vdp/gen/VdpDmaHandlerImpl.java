@@ -27,9 +27,8 @@ import omegadrive.vdp.model.GenesisVdpProvider;
 import omegadrive.vdp.model.IVdpFifo;
 import omegadrive.vdp.model.VdpDmaHandler;
 import omegadrive.vdp.model.VdpMemoryInterface;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import static omegadrive.vdp.model.GenesisVdpProvider.VdpRegisterName.*;
 
@@ -62,7 +61,7 @@ public class VdpDmaHandlerImpl implements VdpDmaHandler {
 
     public DmaMode setupDma(GenesisVdpProvider.VramMode vramMode, long data, boolean m1) {
         if (!m1) {
-            LogHelper.printLevel(LOG, Level.WARN, "Attempting DMA but m1 not set: {}, data: {}", dmaMode, data, verbose);
+            //LogHelper.printLevel(LOG, Level.WARN, "Attempting DMA but m1 not set: {}, data: {}", dmaMode, data, verbose);
             return null;
         }
         dmaMode = getDmaMode(vdpProvider.getRegisterData(DMA_SOURCE_HIGH), vramMode);

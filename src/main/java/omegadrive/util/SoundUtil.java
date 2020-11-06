@@ -20,8 +20,8 @@
 package omegadrive.util;
 
 import omegadrive.sound.javasound.AbstractSoundManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 import javax.sound.sampled.*;
 import java.io.File;

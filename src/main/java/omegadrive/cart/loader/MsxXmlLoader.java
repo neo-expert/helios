@@ -21,8 +21,6 @@ package omegadrive.cart.loader;
 
 import omegadrive.cart.mapper.MapperSelector;
 import omegadrive.cart.mapper.RomMapper;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -35,6 +33,8 @@ import javax.xml.xpath.XPathFactory;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * MSX roms db from the openMsx project

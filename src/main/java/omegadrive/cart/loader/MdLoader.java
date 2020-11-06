@@ -21,10 +21,10 @@ package omegadrive.cart.loader;
 
 import omegadrive.cart.mapper.MapperSelector;
 import omegadrive.util.FileLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.*;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 
 /**
  * Roms db from blastem

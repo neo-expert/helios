@@ -20,10 +20,10 @@
 package omegadrive.cart;
 
 import omegadrive.memory.IMemoryProvider;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.util.Size;
 import omegadrive.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Path;
 import java.util.Arrays;

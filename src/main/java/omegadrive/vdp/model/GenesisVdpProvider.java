@@ -21,10 +21,10 @@ package omegadrive.vdp.model;
 
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.Maps;
+import omegadrive.LogManager;
+import omegadrive.Logger;
 import omegadrive.bus.gen.GenesisBusProvider;
 import omegadrive.vdp.gen.GenesisVdp;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.EnumSet;
 import java.util.Map;
